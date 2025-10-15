@@ -159,7 +159,7 @@
         <a href="#">Forgot password?</a>
       </div>
 
-      <button type="submit" class="btn-login">Login</button>
+      <a class="nav-link" href="./Home.html"><button type="submit" class="btn-login">Login</button></a></li>
 
       <div class="text-center mt-4">
         <small>Don’t have an account? <a href="#">Register</a></small>
