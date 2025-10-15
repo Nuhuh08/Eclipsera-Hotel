@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="th">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Eclipsera Hotel — Welcome</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Inter:wght@300;400;600&display=swap"
+    rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    :root {
+      --accent: #b98bff;
+      --gold: #d9b65a;
+      --bg: #0b0a13;
+      --text: #e5e3f5;
+      --red: #c97b7b;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #000;
+      overflow: hidden;
+      color: var(--text);
+    }
+
+    .bg-video {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -3;
+      filter: brightness(0.35) saturate(1.2);
+    }
+
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle at center, rgba(0, 0, 0, 0.3), rgba(5, 3, 10, 0.95));
+      z-index: -2;
+    }
+
+    .text-box {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 40px;
+      opacity: 0;
+      transition: opacity 2s ease;
+    }
+
+    .dialogue {
+      font-family: 'Cinzel', serif;
+      font-size: 1.6rem;
+      line-height: 1.7;
+      color: var(--text);
+      max-width: 800px;
+      margin-bottom: 20px;
+      opacity: 0;
+      transform: translateY(10px);
+      transition: opacity 1.5s ease, transform 1.5s ease;
+    }
+
+    .dialogue.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .btn-enter {
+      display: none;
+      background: var(--accent);
+      border: none;
+      padding: 12px 25px;
+      border-radius: 10px;
+      color: #fff;
+      font-weight: 600;
+      font-size: 1.2rem;
+      cursor: pointer;
+      margin-top: 30px;
+      transition: background 0.3s ease, transform 0.3s ease;
+    }
+
+    .btn-enter:hover {
+      background: #6b3bbd;
+      transform: scale(1.05);
+    }
+
+    #music-toggle {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(185, 139, 255, 0.4);
+      color: var(--accent);
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      font-size: 1.4rem;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    #music-toggle:hover {
+      background: rgba(185, 139, 255, 0.3);
+      color: #fff;
+    }
+  </style>
+</head>
+
+<body>
+  <video class="bg-video" autoplay muted loop playsinline>
+    <source src="./image/hotel2.gif" type="video/mp4">
+  </video>
+  <div class="overlay"></div>
+
+  <div class="text-box" id="textBox">
+    <div id="dialogues"></div>
+    <button class="btn-enter" id="enterBtn" onclick="goHome()">เข้าสู่โรงแรม</button>
+  </div>
+
+  <button id="music-toggle">🔈</button>
+  <audio id="bg-music" loop>
+    <source src="./mp3/Dark Waltz Music - Vampire Masquerade collection.mp3" type="audio/mpeg">
+  </audio>
+
+  <script>
+    const audio = document.getElementById('bg-music');
+    const btn = document.getElementById('music-toggle');
+    const textBox = document.getElementById('textBox');
+    const dialoguesContainer = document.getElementById('dialogues');
+    const enterBtn = document.getElementById('enterBtn');
+
+    const guestType = localStorage.getItem("guestType");
+
+    const dialoguesGem = [
+      "โอ้... ท่านอัญมณีผู้มาเยือนที่สูงศักดิ์นี่เอง...",
+      "แสงสะท้อนแห่งท่านช่างงดงามเกินกว่าจะมองตรงๆได้...",
+      "ทางโรงแรม Eclipsera ของเรารู้สึกเป็นเกียรติยิ่งที่ได้ต้อนรับท่าน...",
+      "ขอให้ค่ำคืนนี้เต็มไปด้วยประกายแห่งความลึกลับที่ท่านคู่ควร..."
+    ];
+
+    const dialoguesHuman = [
+      "อ๋อ... พวกมนุษย์งั้นหรือ?",
+      "เฮอะ... สกปรก โสโครก และไร้ซึ่งประกายแห่งศักดิ์ศรี...",
+      "แต่นั่นสินะ... แม้สิ่งต่ำต้อยยังต้องการที่พักพิง...",
+      "ยินดีต้อนรับเข้าสู่โรงแรม Eclipsera... ถ้าเรียกว่า ‘ยินดี’ ได้ละก็นะ..."
+    ];
+
+    const dialogues = guestType === "มนุษย์อัญมณี" ? dialoguesGem : dialoguesHuman;
+
+    // เล่นเพลงอัตโนมัติ
+    window.addEventListener('load', () => {
+      textBox.style.opacity = 1;
+
+      const playPromise = audio.play();
+      if (playPromise !== undefined) {
+        playPromise.then(() => btn.textContent = '🔊')
+          .catch(() => btn.textContent = '🔈');
+      }
+
+      showDialogue(0);
+    });
+
+    // แสดงประโยคทีละบรรทัด
+    function showDialogue(index) {
+      if (index >= dialogues.length) {
+        setTimeout(() => enterBtn.style.display = 'inline-block', 1500);
+        return;
+      }
+
+      const p = document.createElement('div');
+      p.className = 'dialogue';
+      p.textContent = dialogues[index];
+      dialoguesContainer.appendChild(p);
+
+      setTimeout(() => p.classList.add('show'), 300);
+
+      setTimeout(() => {
+        p.classList.remove('show');
+        setTimeout(() => {
+          p.remove();
+          showDialogue(index + 1);
+        }, 1000);
+      }, 3500);
+    }
+
+    // ปุ่ม toggle เพลง
+    let playing = true;
+    btn.addEventListener('click', () => {
+      if (playing) {
+        audio.pause();
+        btn.textContent = '🔈';
+      } else {
+        audio.play();
+        btn.textContent = '🔊';
+      }
+      playing = !playing;
+    });
+
+    function goHome() {
+      window.location.href = "Home.html";
+    }
+  </script>
+</body>
+
+</html>
