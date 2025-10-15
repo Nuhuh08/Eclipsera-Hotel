@@ -1,0 +1,361 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Hotel — Lust Section</title>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        :root {
+            --accent: #b98bff;
+            --accent-dark: #6b3bbd;
+            --gold: #d9b65a;
+            --bg: #0b0a13;
+            --card-bg: #1b101b;
+            --text: #ffffff;
+            /* เปลี่ยนตัวอักษรสีเทาเป็นขาว */
+        }
+
+        body {
+            font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+            background: radial-gradient(circle at top, #2c152c 0%, #0b0a13 90%);
+            color: var(--text);
+            scroll-behavior: smooth;
+        }
+
+        /* NAVBAR */
+        .navbar {
+            background: rgba(10, 8, 20, 0.8);
+            backdrop-filter: blur(8px);
+            border-bottom: 1px solid rgba(185, 139, 255, 0.25);
+        }
+
+        .navbar-brand {
+            font-weight: 700;
+            color: var(--gold) !important;
+            text-shadow: 0 0 6px rgba(217, 182, 90, 0.4);
+        }
+
+        .nav-link {
+            color: var(--text) !important;
+            transition: color .3s;
+        }
+
+        .nav-link:hover {
+            color: var(--accent) !important;
+        }
+
+        .btn-outline-primary {
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+
+        .btn-outline-primary:hover {
+            background: var(--accent);
+            color: #fff;
+        }
+
+        /* SECTION TITLES */
+        h2.section-title {
+            color: var(--accent);
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            text-align: center;
+            text-shadow: 0 0 12px rgba(185, 139, 255, 0.5);
+        }
+
+        h3.sub-title {
+            color: var(--gold);
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 12px;
+            border-bottom: 1px solid rgba(185, 139, 255, 0.3);
+            padding-bottom: 5px;
+        }
+
+        p {
+            color: var(--text);
+            font-size: 0.95rem;
+        }
+
+        /* CARDS */
+        .card {
+            background: var(--card-bg);
+            border: 1px solid rgba(185, 139, 255, 0.2);
+            border-radius: 14px;
+            overflow: hidden;
+            transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.3s;
+            margin-bottom: 30px;
+        }
+
+        .card:hover {
+            transform: translateY(-6px);
+            border-color: var(--accent);
+            box-shadow: 0 0 30px rgba(185, 139, 255, 0.4);
+        }
+
+        .card-img-top {
+            border-radius: 14px 14px 0 0;
+            object-fit: cover;
+            height: 220px;
+        }
+
+        .card-body h5 {
+            color: var(--accent);
+            font-weight: 600;
+            margin-bottom: 10px;
+            text-shadow: 0 0 4px rgba(185, 139, 255, 0.5);
+        }
+
+        .card-body p {
+            margin-bottom: 0;
+        }
+
+        /* GRID */
+        .row.g-4 {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .col-md-4,
+        .col-sm-6 {
+            display: flex;
+        }
+
+        /* FOOTER */
+        footer {
+            margin-top: 48px;
+            padding: 32px 0;
+            background: #0a0912;
+            color: var(--text);
+            border-top: 1px solid rgba(185, 139, 255, 0.15);
+        }
+
+        footer p {
+            color: var(--accent);
+        }
+
+        footer small {
+            color: var(--text);
+        }
+
+        .card-img-left {
+            width: 300px;
+            height: auto;
+            object-fit: cover;
+            border-radius: 14px 0 0 14px;
+        }
+
+        @media (max-width: 767px) {
+            .card.d-flex.flex-row {
+                flex-direction: column;
+            }
+
+            .card-img-left {
+                width: 100%;
+                border-radius: 14px 14px 0 0;
+            }
+        }
+
+        .section-header img {
+            padding: 8px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-dark mb-5">
+        <div class="container">
+            <a class="navbar-brand" href="#">Eclipsera Hotel</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navMenu">
+                <ul class="navbar-nav ms-auto align-items-lg-center">
+                    <li class="nav-item me-2"><a class="nav-link" href="./Home.html">Home</a></li>
+                    <li class="nav-item me-2"><a class="nav-link" href="./Role.html">Role</a></li>
+                    <li class="nav-item me-2"><a class="nav-link" href="./About_Hotel.html">About Hotel</a></li>
+                    <li class="nav-item me-2"><a class="nav-link" href="./About_Tag.html">About Tag</a></li>
+                    <li class="nav-item me-2"><button id="music-toggle" class="btn btn-outline-primary btn-sm">🔈
+                            Music</button></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- LUST SECTION -->
+    <main class="container">
+
+        <div class="section-header text-center mb-4">
+            <!-- รูปตรา / Emblem -->
+            <img src="./image/ตราโลภะ.png" alt="Emblem" style="width:300px; height:auto; margin-bottom:15px;">
+
+            <!-- ชื่อ Section -->
+            <h2 class="section-title">Greed Hall</h2>
+        </div>
+
+        <p class="text-center mb-5">
+            แผนกประมูลและคลังสมบัติของโรงแรม “Greed Hall” คือหัวใจของความโลภและความมั่งคั่ง
+            พวกเขาควบคุมตลาดมืด ห้องประมูล และบันทึกมูลค่าของอัญมณีทุกเม็ดที่ผ่านเข้ามา
+            ทุกสิ่งมีราคา และไม่มีสิ่งใดที่ไม่สามารถซื้อได้ หากคุณยื่นข้อเสนอที่คุ้มค่าเพียงพอ
+        </p>
+
+        <!-- LEADERSHIP -->
+        <div class="mb-5">
+            <h3 class="sub-title">Leader</h3>
+            <div class="row g-4 justify-content-center">
+                <!-- Velvet Master Horizontal Card -->
+                <div class="col-12">
+                    <div class="card h-100 d-flex flex-row">
+                        <img src="./image/ตัวอย่างรูปตึงๆ.jpg" class="card-img-left" alt="Velvet Master"
+                            style="width: 400px; object-fit: cover; border-radius: 14px 0 0 14px;">
+                        <div class="card-body d-flex flex-column">
+                            <h5>Gilded Broker</h5>
+                            <p>ผู้บริหารสูงสุดแห่งคลังสมบัติ ผู้ครอบครองห้องประมูลบาปทั้งหมด
+                                เจรจาได้อย่างเฉียบแหลมและไร้ความปรานี
+                                เชื่อว่าความสัมพันธ์ ความเชื่อใจ หรือแม้แต่ความรัก
+                                ล้วนแลกเปลี่ยนได้ด้วยทองคำหรือเพชรในมูลค่าที่เหมาะสม</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- ENTERTAINERS -->
+        <div class="mb-5">
+            <h3 class="sub-title">Entertainers & Staff</h3>
+            <div class="row g-4 justify-content-center">
+                <!-- Gem Courtesans -->
+                <div class="col-md-4 col-sm-6">
+                    <div class="card h-100">
+                        <img src="./image/ตัวอย่างรูปตึงๆ.jpg" class="card-img-top" alt="Gem Courtesans">
+                        <div class="card-body d-flex flex-column">
+                            <h5>Coinwrights</h5>
+                            <p>พ่อค้าระดับสูงที่ทำหน้าที่เชื่อมโยงระหว่างผู้ขายและผู้ซื้อในเงามืด
+                                ทุกการต่อรองของพวกเขาคือศิลปะแห่งการสะสมผลประโยชน์</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Rosetail Servants -->
+                <div class="col-md-4 col-sm-6">
+                    <div class="card h-100">
+                        <img src="./image/ตัวอย่างรูปตึงๆ.jpg" class="card-img-top" alt="Rosetail Servants">
+                        <div class="card-body d-flex flex-column">
+                            <h5>Scrap Dealers</h5>
+                            <p>นักล่าของหายากที่เดินทางในเงามืดเพื่อหาสมบัติที่คนอื่นมองข้าม
+                                พวกเขาเชื่อว่า ขยะของคนหนึ่ง อาจเป็นทองคำของอีกคน</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Additional Staff Example -->
+                <div class="col-md-4 col-sm-6">
+                    <div class="card h-100">
+                        <img src="./image/ตัวอย่างรูปตึงๆ.jpg" class="card-img-top" alt="Lust Assistant">
+                        <div class="card-body d-flex flex-column">
+                            <h5>Lust Assistants</h5>
+                            <p>ผู้ช่วยระดับกลาง มีหน้าที่จัดเตรียมงานและดูแลรายละเอียดเล็กน้อยในงานสังสรรค์
+                                พวกเขาช่วยให้ฝ่ายราคะดำเนินไปอย่างราบรื่นและหรูหรา
+                                พร้อมทั้งประสานงานระหว่าง Leadership และ Entertainers</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- GREED ROOMS -->
+        <div class="mb-5">
+            <h3 class="sub-title">Greed Suites</h3>
+            <div class="row g-4 justify-content-center">
+
+                <!-- Golden Hoard -->
+                <div class="col-md-4 col-sm-6">
+                    <div class="card h-100">
+                        <img src="./image/room.gif" class="card-img-top" alt="Golden Hoard">
+                        <div class="card-body d-flex flex-column">
+                            <h5>Golden Hoard</h5>
+                            <p>
+                                ห้องพักที่ประดับด้วยทองและหินมีค่า
+                                เต็มไปด้วยเครื่องประดับและของหรู
+                                แขกจะรู้สึกถึงความปรารถนาที่อยากครอบครองทุกสิ่งรอบตัว
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Vault Chamber -->
+                <div class="col-md-4 col-sm-6">
+                    <div class="card h-100">
+                        <img src="./image/room2.gif" class="card-img-top" alt="Vault Chamber">
+                        <div class="card-body d-flex flex-column">
+                            <h5>Vault Chamber</h5>
+                            <p>
+                                ห้องพักที่เหมือนห้องเก็บสมบัติส่วนตัว
+                                ผนังตกแต่งทองแดงเข้มและไฟอบอุ่น
+                                ทุกสิ่งรอบตัวชวนให้แขกรู้สึกอยากครอบครองมากขึ้น
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Opulent Retreat -->
+                <div class="col-md-4 col-sm-6">
+                    <div class="card h-100">
+                        <img src="./image/room3.gif" class="card-img-top" alt="Opulent Retreat">
+                        <div class="card-body d-flex flex-column">
+                            <h5>Opulent Retreat</h5>
+                            <p>
+                                ห้องพักที่ผสมผสานความหรูหราและความลึกลับ
+                                โคมไฟสีทองและม่านสีแดงเข้มชวนให้หลงใหล
+                                แขกจะรู้สึกถึงความฟุ่มเฟือยและแรงดึงดูดของความโลภ
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+    </main>
+    <footer class="text-center">
+        <div class="container">
+            <p class="mb-1">© 2025 Eclipsera Hotel — Designed with ❤️</p>
+            <small>Replace placeholder images with your own (folder: /image) for production.</small>
+        </div>
+    </footer>
+    <audio id="bg-music" autoplay loop>
+        <source src="./mp3/โลภะ.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const audio = document.getElementById('bg-music');
+        const btn = document.getElementById('music-toggle');
+        let playing = false;
+
+        btn.addEventListener('click', () => {
+            if (!playing) {
+                audio.play();
+                btn.textContent = '🔊 Playing';
+            } else {
+                audio.pause();
+                btn.textContent = '🔈 Music';
+            }
+            playing = !playing;
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,362 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Hotel — Lust Section</title>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        :root {
+            --accent: #b98bff;
+            --accent-dark: #6b3bbd;
+            --gold: #d9b65a;
+            --bg: #0b0a13;
+            --card-bg: #1b101b;
+            --text: #ffffff;
+            /* เปลี่ยนตัวอักษรสีเทาเป็นขาว */
+        }
+
+        body {
+            font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+            background: radial-gradient(circle at top, #2c152c 0%, #0b0a13 90%);
+            color: var(--text);
+            scroll-behavior: smooth;
+        }
+
+        /* NAVBAR */
+        .navbar {
+            background: rgba(10, 8, 20, 0.8);
+            backdrop-filter: blur(8px);
+            border-bottom: 1px solid rgba(185, 139, 255, 0.25);
+        }
+
+        .navbar-brand {
+            font-weight: 700;
+            color: var(--gold) !important;
+            text-shadow: 0 0 6px rgba(217, 182, 90, 0.4);
+        }
+
+        .nav-link {
+            color: var(--text) !important;
+            transition: color .3s;
+        }
+
+        .nav-link:hover {
+            color: var(--accent) !important;
+        }
+
+        .btn-outline-primary {
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+
+        .btn-outline-primary:hover {
+            background: var(--accent);
+            color: #fff;
+        }
+
+        /* SECTION TITLES */
+        h2.section-title {
+            color: var(--accent);
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            text-align: center;
+            text-shadow: 0 0 12px rgba(185, 139, 255, 0.5);
+        }
+
+        h3.sub-title {
+            color: var(--gold);
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 12px;
+            border-bottom: 1px solid rgba(185, 139, 255, 0.3);
+            padding-bottom: 5px;
+        }
+
+        p {
+            color: var(--text);
+            font-size: 0.95rem;
+        }
+
+        /* CARDS */
+        .card {
+            background: var(--card-bg);
+            border: 1px solid rgba(185, 139, 255, 0.2);
+            border-radius: 14px;
+            overflow: hidden;
+            transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.3s;
+            margin-bottom: 30px;
+        }
+
+        .card:hover {
+            transform: translateY(-6px);
+            border-color: var(--accent);
+            box-shadow: 0 0 30px rgba(185, 139, 255, 0.4);
+        }
+
+        .card-img-top {
+            border-radius: 14px 14px 0 0;
+            object-fit: cover;
+            height: 220px;
+        }
+
+        .card-body h5 {
+            color: var(--accent);
+            font-weight: 600;
+            margin-bottom: 10px;
+            text-shadow: 0 0 4px rgba(185, 139, 255, 0.5);
+        }
+
+        .card-body p {
+            margin-bottom: 0;
+        }
+
+        /* GRID */
+        .row.g-4 {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .col-md-4,
+        .col-sm-6 {
+            display: flex;
+        }
+
+        /* FOOTER */
+        footer {
+            margin-top: 48px;
+            padding: 32px 0;
+            background: #0a0912;
+            color: var(--text);
+            border-top: 1px solid rgba(185, 139, 255, 0.15);
+        }
+
+        footer p {
+            color: var(--accent);
+        }
+
+        footer small {
+            color: var(--text);
+        }
+
+        .card-img-left {
+            width: 300px;
+            height: auto;
+            object-fit: cover;
+            border-radius: 14px 0 0 14px;
+        }
+
+        @media (max-width: 767px) {
+            .card.d-flex.flex-row {
+                flex-direction: column;
+            }
+
+            .card-img-left {
+                width: 100%;
+                border-radius: 14px 14px 0 0;
+            }
+        }
+
+        .section-header img {
+            padding: 8px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-dark mb-5">
+        <div class="container">
+            <a class="navbar-brand" href="#">Eclipsera Hotel</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navMenu">
+                <ul class="navbar-nav ms-auto align-items-lg-center">
+                    <li class="nav-item me-2"><a class="nav-link" href="./Home.html">Home</a></li>
+                    <li class="nav-item me-2"><a class="nav-link" href="./Role.html">Role</a></li>
+                    <li class="nav-item me-2"><a class="nav-link" href="./About_Hotel.html">About Hotel</a></li>
+                    <li class="nav-item me-2"><a class="nav-link" href="./About_Tag.html">About Tag</a></li>
+                    <li class="nav-item me-2"><button id="music-toggle" class="btn btn-outline-primary btn-sm">🔈
+                            Music</button></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- LUST SECTION -->
+    <main class="container">
+
+        <div class="section-header text-center mb-4">
+            <!-- รูปตรา / Emblem -->
+            <img src="./image/ตราโทสะ.png" alt="Emblem" style="width:300px; height:auto; margin-bottom:15px;">
+
+            <!-- ชื่อ Section -->
+            <h2 class="section-title">Wrath Wing</h2>
+        </div>
+
+        <p class="text-center mb-5">
+            แผนกรักษาความปลอดภัยและผู้พิทักษ์ของโรงแรม
+            หน้าที่ของพวกเขาคือปราบปรามผู้ทรยศ ปกป้องโรงแรม และควบคุมการก่อจลาจล
+            เป็นกองกำลังที่ซื่อสัตย์ต่อคำสั่งของนายเหนือหัวเพียงหนึ่งเดียว
+            ความโกรธคือเชื้อเพลิงของพวกเขา และเลือดคือคำสาบานของความจงรักภักดี
+        </p>
+
+        <!-- LEADER -->
+        <div class="mb-5">
+            <h3 class="sub-title">Leader</h3>
+            <div class="row g-4 justify-content-center">
+                <div class="col-12">
+                    <div class="card h-100 d-flex flex-row">
+                        <img src="./image/ตัวอย่างรูปตึงๆ.jpg" class="card-img-left" alt="The Blood Sentinel">
+                        <div class="card-body d-flex flex-column">
+                            <h5>The Blood Sentinel</h5>
+                            <p>ผู้บัญชาการสูงสุดของ Crimson Guard
+                                ควบคุมกองกำลังทั้งหมดในโรงแรมด้วยความเข้มงวดและไม่ลังเลที่จะลงโทษผู้ทรยศ
+                                พวกเขาคือสัญลักษณ์ของความโกรธที่ถูกขัดเกลา เงียบงัน รุนแรง และแน่วแน่
+                                ทุกคำสั่งของเขาคือ “คำตัดสินสุดท้าย” ที่ไม่มีสิทธิ์โต้แย้ง</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- ENTERTAINERS -->
+        <div class="mb-5">
+            <h3 class="sub-title">Entertainers & Staff</h3>
+            <div class="row g-4 justify-content-center">
+                <!-- Crimson Captain -->
+                <div class="col-md-4 col-sm-6">
+                    <div class="card h-100">
+                        <img src="./image/ตัวอย่างรูปตึงๆ.jpg" class="card-img-top" alt="Crimson Captain">
+                        <div class="card-body d-flex flex-column">
+                            <h5>Crimson Captain</h5>
+                            <p>มนุษย์อัญมณีที่แตกบางส่วนจากการต่อสู้
+                                พวกเขาทำหน้าที่ควบคุมหน่วยลาดตระเวนและสังเกตการณ์รอบโรงแรม
+                                แม้ร่างกายจะบาดเจ็บแต่ยังคงสาบานภักดีต่อเจ้านายอย่างไม่สั่นคลอน</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Ruby Enforcer -->
+                <div class="col-md-4 col-sm-6">
+                    <div class="card h-100">
+                        <img src="./image/ตัวอย่างรูปตึงๆ.jpg" class="card-img-top" alt="Ruby Enforcer">
+                        <div class="card-body d-flex flex-column">
+                            <h5>Ruby Enforcer</h5>
+                            <p>ทหารฝึกพิเศษที่ผ่านการทดสอบความอดทนและความจงรักภักดี
+                                ทำหน้าที่เป็นแนวหน้าในการต่อสู้ ปราบผู้ก่อการร้าย หรือจับกุมแขกที่ละเมิดกฎ
+                                พวกเขาคือโล่และคมดาบแห่ง Crimson Guard</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Shard Hunters -->
+                <div class="col-md-4 col-sm-6">
+                    <div class="card h-100">
+                        <img src="./image/ตัวอย่างรูปตึงๆ.jpg" class="card-img-top" alt="Shard Hunters">
+                        <div class="card-body d-flex flex-column">
+                            <h5>Shard Hunters</h5>
+                            <p>ผู้ล่าที่ออกตามหาผู้หลบหนีบาปและผู้ที่ทรยศต่อโรงแรม
+                                พวกเขาเชี่ยวชาญในการสะกดรอย ฆ่าโดยไร้เสียง และทิ้งร่องรอยเพียงคราบเลือด
+                                ไม่มีสิ่งใดรอดพ้นสายตาของ Shard Hunters ได้</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- WRATH ROOMS -->
+        <div class="mb-5">
+            <h3 class="sub-title">Wrath Chambers</h3>
+            <div class="row g-4 justify-content-center">
+
+                <!-- Fury Suite -->
+                <div class="col-md-4 col-sm-6">
+                    <div class="card h-100">
+                        <img src="./image/room.gif" class="card-img-top" alt="Fury Suite">
+                        <div class="card-body d-flex flex-column">
+                            <h5>Fury Suite</h5>
+                            <p>
+                                ห้องพักที่ปลุกเร้าความโกรธและพลังดิบ
+                                ผนังสีแดงเข้ม ตกแต่งด้วยทองแดงและไฟสลัว
+                                แขกที่เข้าพักจะรู้สึกเหมือนพลังร้อนแรงพุ่งผ่านร่าง
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Inferno Chamber -->
+                <div class="col-md-4 col-sm-6">
+                    <div class="card h-100">
+                        <img src="./image/room2.gif" class="card-img-top" alt="Inferno Chamber">
+                        <div class="card-body d-flex flex-column">
+                            <h5>Inferno Chamber</h5>
+                            <p>
+                                ห้องพักที่ร้อนแรงราวกับเพลิงไหม้
+                                เตียงใหญ่โอบล้อมด้วยผ้าม่านสีแดงเข้ม
+                                ทุกเสียงทุกแสงในห้องเหมือนกระตุ้นความรุนแรงของอารมณ์
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Rage Retreat -->
+                <div class="col-md-4 col-sm-6">
+                    <div class="card h-100">
+                        <img src="./image/room3.gif" class="card-img-top" alt="Rage Retreat">
+                        <div class="card-body d-flex flex-column">
+                            <h5>Rage Retreat</h5>
+                            <p>
+                                ห้องพักที่สร้างบรรยากาศให้แขกปลดปล่อยอารมณ์
+                                โคมไฟส่องแสงอุ่น ผนังเข้ม และพรมสีแดงเข้ม
+                                พลังของความโกรธและแรงดึงดูดทางอารมณ์อยู่รอบตัว
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+    </main>
+    <footer class="text-center">
+        <div class="container">
+            <p class="mb-1">© 2025 Eclipsera Hotel — Designed with ❤️</p>
+            <small>Replace placeholder images with your own (folder: /image) for production.</small>
+        </div>
+    </footer>
+    <audio id="bg-music" autoplay loop>
+        <source src="./mp3/โทสะ.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const audio = document.getElementById('bg-music');
+        const btn = document.getElementById('music-toggle');
+        let playing = false;
+
+        btn.addEventListener('click', () => {
+            if (!playing) {
+                audio.play();
+                btn.textContent = '🔊 Playing';
+            } else {
+                audio.pause();
+                btn.textContent = '🔈 Music';
+            }
+            playing = !playing;
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,364 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Hotel — Lust Section</title>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        :root {
+            --accent: #b98bff;
+            --accent-dark: #6b3bbd;
+            --gold: #d9b65a;
+            --bg: #0b0a13;
+            --card-bg: #1b101b;
+            --text: #ffffff;
+            /* เปลี่ยนตัวอักษรสีเทาเป็นขาว */
+        }
+
+        body {
+            font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+            background: radial-gradient(circle at top, #2c152c 0%, #0b0a13 90%);
+            color: var(--text);
+            scroll-behavior: smooth;
+        }
+
+        /* NAVBAR */
+        .navbar {
+            background: rgba(10, 8, 20, 0.8);
+            backdrop-filter: blur(8px);
+            border-bottom: 1px solid rgba(185, 139, 255, 0.25);
+        }
+
+        .navbar-brand {
+            font-weight: 700;
+            color: var(--gold) !important;
+            text-shadow: 0 0 6px rgba(217, 182, 90, 0.4);
+        }
+
+        .nav-link {
+            color: var(--text) !important;
+            transition: color .3s;
+        }
+
+        .nav-link:hover {
+            color: var(--accent) !important;
+        }
+
+        .btn-outline-primary {
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+
+        .btn-outline-primary:hover {
+            background: var(--accent);
+            color: #fff;
+        }
+
+        /* SECTION TITLES */
+        h2.section-title {
+            color: var(--accent);
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            text-align: center;
+            text-shadow: 0 0 12px rgba(185, 139, 255, 0.5);
+        }
+
+        h3.sub-title {
+            color: var(--gold);
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 12px;
+            border-bottom: 1px solid rgba(185, 139, 255, 0.3);
+            padding-bottom: 5px;
+        }
+
+        p {
+            color: var(--text);
+            font-size: 0.95rem;
+        }
+
+        /* CARDS */
+        .card {
+            background: var(--card-bg);
+            border: 1px solid rgba(185, 139, 255, 0.2);
+            border-radius: 14px;
+            overflow: hidden;
+            transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.3s;
+            margin-bottom: 30px;
+        }
+
+        .card:hover {
+            transform: translateY(-6px);
+            border-color: var(--accent);
+            box-shadow: 0 0 30px rgba(185, 139, 255, 0.4);
+        }
+
+        .card-img-top {
+            border-radius: 14px 14px 0 0;
+            object-fit: cover;
+            height: 220px;
+        }
+
+        .card-body h5 {
+            color: var(--accent);
+            font-weight: 600;
+            margin-bottom: 10px;
+            text-shadow: 0 0 4px rgba(185, 139, 255, 0.5);
+        }
+
+        .card-body p {
+            margin-bottom: 0;
+        }
+
+        /* GRID */
+        .row.g-4 {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .col-md-4,
+        .col-sm-6 {
+            display: flex;
+        }
+
+        /* FOOTER */
+        footer {
+            margin-top: 48px;
+            padding: 32px 0;
+            background: #0a0912;
+            color: var(--text);
+            border-top: 1px solid rgba(185, 139, 255, 0.15);
+        }
+
+        footer p {
+            color: var(--accent);
+        }
+
+        footer small {
+            color: var(--text);
+        }
+
+        .card-img-left {
+            width: 300px;
+            height: auto;
+            object-fit: cover;
+            border-radius: 14px 0 0 14px;
+        }
+
+        @media (max-width: 767px) {
+            .card.d-flex.flex-row {
+                flex-direction: column;
+            }
+
+            .card-img-left {
+                width: 100%;
+                border-radius: 14px 14px 0 0;
+            }
+        }
+
+        .section-header img {
+            padding: 8px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-dark mb-5">
+        <div class="container">
+            <a class="navbar-brand" href="#">Eclipsera Hotel</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navMenu">
+                <ul class="navbar-nav ms-auto align-items-lg-center">
+                    <li class="nav-item me-2"><a class="nav-link" href="./Home.html">Home</a></li>
+                    <li class="nav-item me-2"><a class="nav-link" href="./Role.html">Role</a></li>
+                    <li class="nav-item me-2"><a class="nav-link" href="./About_Hotel.html">About Hotel</a></li>
+                    <li class="nav-item me-2"><a class="nav-link" href="./About_Tag.html">About Tag</a></li>
+                    <li class="nav-item me-2"><button id="music-toggle" class="btn btn-outline-primary btn-sm">🔈
+                            Music</button></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- LUST SECTION -->
+    <main class="container">
+
+        <div class="section-header text-center mb-4">
+            <!-- รูปตรา / Emblem -->
+            <img src="./image/ตราตะกละ.png" alt="Emblem" style="width:300px; height:auto; margin-bottom:15px;">
+
+            <!-- ชื่อ Section -->
+            <h2 class="section-title">Gluttony Hall</h2>
+        </div>
+
+        <p class="text-center mb-5">
+            แผนกครัวและจัดเลี้ยงของโรงแรม เป็นสถานที่ซึ่งรสชาติ ความหอม และเสียงหัวเราะจากโต๊ะอาหารผสมปนกับ
+            กลิ่นคาวของเลือดและเครื่องเซ่นบาป เชฟทุกคนหลงใหลในศิลปะของ “การลิ้มลอง” มากกว่าการกิน
+            และบางครั้ง... สิ่งที่ถูกเสิร์ฟอาจไม่ใช่อาหารธรรมดา
+        </p>
+
+        <!-- LEADER -->
+        <div class="mb-5">
+            <h3 class="sub-title">Leader</h3>
+            <div class="row g-4 justify-content-center">
+                <div class="col-12">
+                    <div class="card h-100 d-flex flex-row">
+                        <img src="./image/ตัวอย่างรูปตึงๆ.jpg" class="card-img-left" alt="Master Gourmand">
+                        <div class="card-body d-flex flex-column">
+                            <h5>Master Gourmand</h5>
+                            <p>หัวหน้าแห่ง Gluttony Hall ผู้ดูแลครัวหลักและพิธีการกินทุกชนิด
+                                เขาเชื่อว่าอาหารคือภาษาของบาป และการลิ้มรสคือศิลปะที่สูงส่งที่สุด
+                                มีหน้าที่คัดเลือกวัตถุดิบ เครื่องเซ่น และดูแล Feastmasters ทั้งหมด
+                                ทุกจานที่เสิร์ฟผ่านมือเขา ล้วนเป็นการสรรเสริญต่อ “ความหิวที่ไม่มีที่สิ้นสุด”</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- ENTERTAINERS -->
+        <div class="mb-5">
+            <h3 class="sub-title">Entertainers & Staff</h3>
+            <div class="row g-4 justify-content-center">
+
+                <!-- Feastmasters -->
+                <div class="col-md-4 col-sm-6">
+                    <div class="card h-100">
+                        <img src="./image/ตัวอย่างรูปตึงๆ.jpg" class="card-img-top" alt="Feastmasters">
+                        <div class="card-body d-flex flex-column">
+                            <h5>Feastmasters</h5>
+                            <p>หัวหน้าเชฟอัญมณี ผู้ควบคุมครัวใหญ่และงานจัดเลี้ยงในแต่ละโถง
+                                พวกเขามีหน้าที่สร้างรสชาติใหม่ที่ท้าทายศีลธรรมและความเป็นมนุษย์
+                                ทุกมื้อคือบททดสอบระหว่างความงามกับความตะกละในใจ</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gem Butchers -->
+                <div class="col-md-4 col-sm-6">
+                    <div class="card h-100">
+                        <img src="./image/ตัวอย่างรูปตึงๆ.jpg" class="card-img-top" alt="Gem Butchers">
+                        <div class="card-body d-flex flex-column">
+                            <h5>Gem Butchers</h5>
+                            <p>ผู้แปรรูปผลึกและร่างอัญมณีอย่างประณีต
+                                พวกเขาทำงานเงียบๆในห้องเย็นลึกลงไปใต้ครัว
+                                ใช้มีดแกะสลักผลึกและอวัยวะมนุษย์ราวกับทำงานศิลป์
+                                เลือดและเศษผลึกคือสีของผลงานที่งดงามที่สุดสำหรับพวกเขา</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Ashhands -->
+                <div class="col-md-4 col-sm-6">
+                    <div class="card h-100">
+                        <img src="./image/ตัวอย่างรูปตึงๆ.jpg" class="card-img-top" alt="Ashhands">
+                        <div class="card-body d-flex flex-column">
+                            <h5>Ashhands</h5>
+                            <p>ผู้ช่วยระดับล่างของครัว ผู้คอยทำความสะอาด
+                                จัดเตรียมเครื่องปรุง และรับคำสั่งอย่างเงียบงัน
+                                บางครั้งพวกเขาเองก็ถูกใช้เป็นอาหารทดลอง
+                                เมื่อเมนูใหม่ต้องการ “สัมผัสของชีวิตจริง”</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- GLUTTONY ROOMS -->
+        <div class="mb-5">
+            <h3 class="sub-title">Gluttony Suites</h3>
+            <div class="row g-4 justify-content-center">
+
+                <!-- Feast Chamber -->
+                <div class="col-md-4 col-sm-6">
+                    <div class="card h-100">
+                        <img src="./image/room.gif" class="card-img-top" alt="Feast Chamber">
+                        <div class="card-body d-flex flex-column">
+                            <h5>Feast Chamber</h5>
+                            <p>
+                                ห้องพักสำหรับผู้ที่รักการลิ้มรส
+                                เต็มไปด้วยผลไม้สด ขนมหวาน และไวน์คุณภาพสูง
+                                แสงทองส่องจากโคมระย้า ให้ความรู้สึกอบอุ่นและเย้ายวน
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Banquet Hall Suite -->
+                <div class="col-md-4 col-sm-6">
+                    <div class="card h-100">
+                        <img src="./image/room2.gif" class="card-img-top" alt="Banquet Hall Suite">
+                        <div class="card-body d-flex flex-column">
+                            <h5>Banquet Hall Suite</h5>
+                            <p>
+                                ห้องสวีทที่ออกแบบเหมือนห้องจัดเลี้ยงส่วนตัว
+                                โต๊ะอาหารยาวเต็มไปด้วยของกินอร่อยหรู
+                                แขกสามารถเพลิดเพลินกับรสชาติและบรรยากาศหรูโดยไม่ต้องออกไปไหน
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Indulgence Retreat -->
+                <div class="col-md-4 col-sm-6">
+                    <div class="card h-100">
+                        <img src="./image/room3.gif" class="card-img-top" alt="Indulgence Retreat">
+                        <div class="card-body d-flex flex-column">
+                            <h5>Indulgence Retreat</h5>
+                            <p>
+                                ห้องพักที่ผสมผสานความสะดวกสบายและความเย้ายวน
+                                เตียงกว้างกับผ้าปูเนื้อนุ่ม และมุมของกินเล็ก ๆ รอบห้อง
+                                ทุกองค์ประกอบเชื้อเชิญให้หลงใหลในความสุขของรสชาติและสัมผัส
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+    </main>
+    <footer class="text-center">
+        <div class="container">
+            <p class="mb-1">© 2025 Eclipsera Hotel — Designed with ❤️</p>
+            <small>Replace placeholder images with your own (folder: /image) for production.</small>
+        </div>
+    </footer>
+    <audio id="bg-music" autoplay loop>
+        <source src="./mp3/ตะกละ.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const audio = document.getElementById('bg-music');
+        const btn = document.getElementById('music-toggle');
+        let playing = false;
+
+        btn.addEventListener('click', () => {
+            if (!playing) {
+                audio.play();
+                btn.textContent = '🔊 Playing';
+            } else {
+                audio.pause();
+                btn.textContent = '🔈 Music';
+            }
+            playing = !playing;
+        });
+    </script>
+</body>
+
+</html>

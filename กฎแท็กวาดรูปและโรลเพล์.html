@@ -1,0 +1,339 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Hotel — Lust Section</title>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        :root {
+            --accent: #b98bff;
+            --accent-dark: #6b3bbd;
+            --gold: #d9b65a;
+            --bg: #0b0a13;
+            --card-bg: #1b101b;
+            --text: #ffffff;
+        }
+
+        body {
+            font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+            background: radial-gradient(circle at top, #2c152c 0%, #0b0a13 90%);
+            color: var(--text);
+            scroll-behavior: smooth;
+        }
+
+        /* NAVBAR */
+        .navbar {
+            background: rgba(10, 8, 20, 0.8);
+            backdrop-filter: blur(8px);
+            border-bottom: 1px solid rgba(185, 139, 255, 0.25);
+        }
+
+        .navbar-brand {
+            font-weight: 700;
+            color: var(--gold) !important;
+            text-shadow: 0 0 6px rgba(217, 182, 90, 0.4);
+        }
+
+        .nav-link {
+            color: var(--text) !important;
+            transition: color .3s;
+        }
+
+        .nav-link:hover {
+            color: var(--accent) !important;
+        }
+
+        .btn-outline-primary {
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+
+        .btn-outline-primary:hover {
+            background: var(--accent);
+            color: #fff;
+        }
+
+        /* SECTION TITLES */
+        h2.section-title {
+            color: var(--accent);
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            text-align: center;
+            text-shadow: 0 0 12px rgba(185, 139, 255, 0.5);
+        }
+
+        h3.sub-title {
+            color: var(--gold);
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 12px;
+            border-bottom: 1px solid rgba(185, 139, 255, 0.3);
+            padding-bottom: 5px;
+        }
+
+        p {
+            color: var(--text);
+            font-size: 0.95rem;
+        }
+
+        /* CARDS */
+        .card {
+            background: var(--card-bg);
+            border: 1px solid rgba(185, 139, 255, 0.2);
+            border-radius: 14px;
+            overflow: hidden;
+            transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.3s;
+            margin-bottom: 30px;
+        }
+
+        .card:hover {
+            transform: translateY(-6px);
+            border-color: var(--accent);
+            box-shadow: 0 0 30px rgba(185, 139, 255, 0.4);
+        }
+
+        .card-img-top {
+            border-radius: 14px 14px 0 0;
+            object-fit: cover;
+            height: 220px;
+        }
+
+        .card-body h5 {
+            color: var(--accent);
+            font-weight: 600;
+            margin-bottom: 10px;
+            text-shadow: 0 0 4px rgba(185, 139, 255, 0.5);
+        }
+
+        .card-body p {
+            margin-bottom: 0;
+        }
+
+        /* GRID */
+        .row.g-4 {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .col-md-4,
+        .col-sm-6 {
+            display: flex;
+        }
+
+        /* FOOTER */
+        footer {
+            margin-top: 48px;
+            padding: 32px 0;
+            background: #0a0912;
+            color: var(--text);
+            border-top: 1px solid rgba(185, 139, 255, 0.15);
+        }
+
+        footer p {
+            color: var(--accent);
+        }
+
+        footer small {
+            color: var(--text);
+        }
+
+        .card-img-left {
+            width: 300px;
+            height: auto;
+            object-fit: cover;
+            border-radius: 14px 0 0 14px;
+        }
+
+        @media (max-width: 767px) {
+            .card.d-flex.flex-row {
+                flex-direction: column;
+            }
+
+            .card-img-left {
+                width: 100%;
+                border-radius: 14px 14px 0 0;
+            }
+        }
+
+        .section-header img {
+            padding: 8px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-dark mb-5">
+        <div class="container">
+            <a class="navbar-brand" href="#">Eclipsera Hotel</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navMenu">
+                <ul class="navbar-nav ms-auto align-items-lg-center">
+                    <li class="nav-item me-2"><a class="nav-link" href="./Home.html">Home</a></li>
+                    <li class="nav-item me-2"><a class="nav-link" href="./Role.html">Role</a></li>
+                    <li class="nav-item me-2"><a class="nav-link" href="./About_Hotel.html">About Hotel</a></li>
+                    <li class="nav-item me-2"><a class="nav-link" href="./About_Tag.html">About Tag</a></li>
+                    <li class="nav-item me-2"><button id="music-toggle" class="btn btn-outline-primary btn-sm">🔈
+                            Music</button></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="container my-5">
+        <div class="text-center mb-4">
+            <div class="section-header">
+                <img src="./image/ตราโรงแรม.png" alt="Eclipsera Logo" width="300px">
+            </div>
+            <h2 class="section-title">กฎกลุ่มและการโรลเพลย์</h2>
+            <p class="text-white">
+                ผู้เข้าร่วมทุกคนต้องปฏิบัติตามกฎอย่างเคร่งครัด มิฉะนั้นจะถูกลงโทษทันทีโดยไม่มีข้อยกเว้น
+            </p>
+        </div>
+
+        <div class="row g-4 justify-content-center">
+
+            <!-- Rule 1 -->
+            <div class="col-md-6">
+                <div class="card p-3 h-100">
+                    <h3 class="sub-title">⚖️ แยกแยะ IC และ OOC</h3>
+                    <p>โปรดแยกให้ชัดเจนระหว่างสิ่งที่เกิดขึ้นในบทบาท (IC) กับความสัมพันธ์นอกบทบาท (OOC) สิ่งที่ตัวละครทำ
+                        ไม่ใช่สิ่งที่ผู้เล่นเป็น
+                        ห้ามนำความรู้สึกส่วนตัวมาเจือปนกับเนื้อเรื่องหรือใช้เป็นข้ออ้างในการทำร้ายใครในชีวิตจริง</p>
+                </div>
+            </div>
+
+            <!-- Rule 2 -->
+            <div class="col-md-6">
+                <div class="card p-3 h-100">
+                    <h3 class="sub-title">🛡️ วุฒิภาวะและความเคารพ</h3>
+                    <p>ผู้เข้ามาเล่นต้องมีวุฒิภาวะทางอารมณ์เพียงพอ พื้นที่นี้ไม่ต้อนรับผู้เล่นที่เห็นแก่ตัว
+                        ขาดการเคารพต่อผู้อื่น หรือไม่เข้าใจขอบเขตระหว่างโลกสมมติและโลกจริง
+                        หากฝ่าฝืนจะถูกเตือนและอาจถูกแบนทันที</p>
+                </div>
+            </div>
+
+            <!-- Rule 3 -->
+            <div class="col-md-6">
+                <div class="card p-3 h-100">
+                    <h3 class="sub-title">🗡️ คำหยาบและการเสียดสี</h3>
+                    <p>อนุญาตเฉพาะระหว่างบุคคลที่สนิทกัน หากเป็นคนแปลกหน้ากรุณาลดระดับถ้อยคำ
+                        หากใช้คำหยาบกับคนอื่นโดยไม่เหมาะสม จะถือว่าเป็นการยั่วยุโดยเจตนาและอาจถูกลงโทษทันที</p>
+                </div>
+            </div>
+
+            <!-- Rule 4 -->
+            <div class="col-md-6">
+                <div class="card p-3 h-100">
+                    <h3 class="sub-title">🤝 ให้เกียรติผู้อื่น</h3>
+                    <p>การเหยียด รังแก ทรมาน หรือฆ่ากันในโรลเป็นเรื่องของบทบาท แต่เมื่ออยู่นอกบท
+                        ต้องเคารพเจ้าของตัวละครทุกคน การแซะ บูลลี่ หรือเหน็บแนม จะถูกเตือนครั้งเดียว หากยังฝ่าฝืน
+                        จะถูกแบนโดยไม่มีข้อโต้แย้ง</p>
+                </div>
+            </div>
+
+            <!-- Rule 5 -->
+            <div class="col-md-6">
+                <div class="card p-3 h-100">
+                    <h3 class="sub-title">⚔️ ห้ามแทรกโรลโดยไม่ได้รับอนุญาต</h3>
+                    <p>ต้องขออนุญาตทุกครั้งก่อนเข้าร่วมโรลกับคนอื่นที่กำลังเล่นอยู่
+                        การแทรกโรลถือว่าล่วงล้ำและไม่มีมารยาท การคอมเมนต์เล็ก ๆ หรืออิโมจิสามารถทำได้
+                        แต่ต้องพอประมาณและไม่รบกวน</p>
+                </div>
+            </div>
+
+            <!-- Rule 6 -->
+            <div class="col-md-6">
+                <div class="card p-3 h-100">
+                    <h3 class="sub-title">🖌️ สิทธิ์ภาพตัวละคร</h3>
+                    <p>ห้ามใช้ภาพตัวละคร IC โดยไม่ได้รับอนุญาต ต้องใช้ภาพวาดเอง จ้างคอมมิชชั่น
+                        หรือได้รับสิทธิ์จากผู้วาดโดยตรง การใช้ AI
+                        หรือคัดลอกผลงานผู้อื่นจะถือว่าละเมิดทรัพย์สินและถูกแบนทันที</p>
+                </div>
+            </div>
+
+            <!-- Rule 7 -->
+            <div class="col-md-6">
+                <div class="card p-3 h-100">
+                    <h3 class="sub-title">🕯️ ขอบเขต NSFW</h3>
+                    <p>เนื้อหา 18+ ต้องไม่ละเมิดผู้อื่นหรือก่อให้เกิดความรำคาญ ต้องได้รับความยินยอมทุกครั้ง
+                        การฝ่าฝืนจะถูกลงโทษทันทีและอาจถูกแบน</p>
+                </div>
+            </div>
+
+            <!-- Rule 8 -->
+            <div class="col-md-6">
+                <div class="card p-3 h-100">
+                    <h3 class="sub-title">🧛 ความสอดคล้องของตัวละคร</h3>
+                    <p>ต้องรักษาความสอดคล้องของตัวละครและคอสตูม หากไม่ปฏิบัติ อาจถูกปรับลดสิทธิ์หรือจำกัดบทบาท</p>
+                </div>
+            </div>
+
+            <!-- Rule 9 -->
+            <div class="col-md-6">
+                <div class="card p-3 h-100">
+                    <h3 class="sub-title">💀 การโกงและใช้ช่องโหว่</h3>
+                    <p>ห้ามโกงหรือใช้ช่องโหว่ในการโรลเพลย์หรือกิจกรรมกลุ่ม
+                        หากตรวจพบจะถูกลงโทษอย่างรุนแรงโดยไม่มีข้อโต้แย้ง</p>
+                </div>
+            </div>
+
+            <!-- Rule 10 -->
+            <div class="col-md-6">
+                <div class="card p-3 h-100">
+                    <h3 class="sub-title">🕸️ การสื่อสารและมารยาท</h3>
+                    <p>ห้ามใช้คำหยาบรุนแรงหรือสร้างความเกลียดชังในช่องสนทนา การฝ่าฝืนจะถูกเตือนหรือแบนทันที</p>
+                </div>
+            </div>
+
+            <!-- Rule 11 -->
+            <div class="col-md-6">
+                <div class="card p-3 h-100">
+                    <h3 class="sub-title">🩹 การบังคับใช้กฎ</h3>
+                    <p>ผู้ดูแลมีสิทธิ์ลงโทษอย่างเคร่งครัดและเด็ดขาด ทุกการละเมิดจะถูกตรวจสอบทันทีและไม่มีข้อยกเว้น</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer class="text-center">
+        <div class="container">
+            <p class="mb-1">© 2025 Eclipsera Hotel — Designed with ❤️</p>
+            <small>Replace placeholder images with your own (folder: /image) for production.</small>
+        </div>
+    </footer>
+    <audio id="bg-music" autoplay loop>
+        <source src="./mp3/Dark Waltz Music - Vampire Masquerade collection.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const audio = document.getElementById('bg-music');
+        const btn = document.getElementById('music-toggle');
+        let playing = false;
+
+        btn.addEventListener('click', () => {
+            if (!playing) {
+                audio.play();
+                btn.textContent = '🔊 Playing';
+            } else {
+                audio.pause();
+                btn.textContent = '🔈 Music';
+            }
+            playing = !playing;
+        });
+    </script>
+</body>
+
+</html>

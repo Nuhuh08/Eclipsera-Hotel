@@ -1,0 +1,375 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Hotel — Home</title>
+
+  <!-- Google font -->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    /* Root Colors */
+    :root {
+      --accent: #b98bff;
+      --accent-dark: #6b3bbd;
+      --gold: #d9b65a;
+      --muted: #b3b3c6;
+      --bg: #0b0a13;
+      --card-bg: #15121f;
+      --text: #e5e3f5;
+      --glow: rgba(185, 139, 255, 0.35);
+    }
+
+    body {
+      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+      background: radial-gradient(circle at top, #1c1529 0%, var(--bg) 95%);
+      color: var(--text);
+      scroll-behavior: smooth;
+    }
+
+    /* NAVBAR */
+    .navbar {
+      background: rgba(10, 8, 20, 0.85);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(185, 139, 255, 0.25);
+    }
+
+    .navbar-brand {
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      color: var(--gold) !important;
+      text-shadow: 0 0 8px rgba(217, 182, 90, 0.5);
+    }
+
+    .nav-link {
+      color: var(--muted) !important;
+      transition: color .3s, text-shadow .3s;
+    }
+
+    .nav-link:hover {
+      color: var(--accent) !important;
+      text-shadow: 0 0 5px var(--glow);
+    }
+
+    .btn-outline-primary {
+      border-color: var(--accent);
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    .btn-outline-primary:hover {
+      background: var(--accent);
+      color: #fff;
+      box-shadow: 0 0 12px var(--glow);
+    }
+
+    /* HERO SECTION */
+    section.text-center h1 {
+      font-size: 3rem;
+      color: var(--gold);
+      font-weight: 900;
+      text-shadow: 0 0 12px rgba(217, 182, 90, 0.7);
+      margin-bottom: 1rem;
+    }
+
+    section.text-center p {
+      color: var(--muted);
+      font-size: 1.1rem;
+      line-height: 1.6;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    h2 {
+      font-weight: 800;
+      color: var(--accent);
+      text-align: center;
+      text-shadow: 0 0 8px var(--glow);
+      margin-bottom: 2rem;
+      font-size: 2rem;
+    }
+
+    /* Founder Cards */
+    .category-card {
+      border: 1px solid rgba(185, 139, 255, 0.2);
+      border-radius: 16px;
+      background: linear-gradient(145deg, #15121f 0%, #1c1529 100%);
+      transition: transform .3s, box-shadow .3s, border-color .3s;
+      padding: 20px;
+      text-align: center;
+      color: var(--text);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+
+    .category-card:hover {
+      transform: translateY(-8px) scale(1.03);
+      border-color: var(--accent);
+      box-shadow: 0 0 25px var(--glow);
+      background: linear-gradient(145deg, #1c1529 0%, #2c1e45 100%);
+    }
+
+    .img-square {
+      width: 100%;
+      height: 220px;
+      overflow: hidden;
+      border-radius: 12px;
+      margin-bottom: 15px;
+      box-shadow: 0 0 12px rgba(185, 139, 255, 0.2);
+    }
+
+    .img-square img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform .3s;
+    }
+
+    .category-card:hover .img-square img {
+      transform: scale(1.05);
+    }
+
+    .card-title {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--gold);
+      margin-bottom: 0.5rem;
+      text-shadow: 0 0 6px rgba(217, 182, 90, 0.5);
+    }
+
+    .text-muted {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    /* Footer */
+    footer {
+      margin-top: 48px;
+      padding: 32px 0;
+      background: #0a0912;
+      border-top: 1px solid rgba(185, 139, 255, 0.15);
+      color: var(--muted);
+      text-align: center;
+    }
+
+    footer p {
+      color: var(--accent);
+      font-weight: 600;
+      text-shadow: 0 0 6px var(--glow);
+    }
+
+    footer small {
+      color: var(--muted);
+    }
+
+    /* Responsive */
+    @media (max-width: 767px) {
+      .category-card {
+        margin: auto;
+        max-width: 90%;
+        text-align: center;
+      }
+
+      .img-square {
+        height: 180px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container">
+      <a class="navbar-brand" href="#">Eclipsera Hotel</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu"
+        aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto align-items-lg-center">
+          <li class="nav-item me-2"><a class="nav-link" href="./Home.html">Home</a></li>
+          <li class="nav-item me-2"><a class="nav-link" href="./Role.html">Role</a></li>
+          <li class="nav-item me-2"><a class="nav-link" href="./About_Hotel.html">About Hotel</a></li>
+          <li class="nav-item me-2"><a class="nav-link" href="./About_Tag.html">About Tag</a></li>
+          <li class="nav-item me-2"><button id="music-toggle" class="btn btn-outline-primary btn-sm">🔈 Music</button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- CONTENT: ABOUT HOTEL -->
+  <main class="container cards-grid my-5">
+    <!-- HERO SECTION -->
+    <section class="text-center mb-5">
+      <h1 class="fw-bold mb-3" style="color: var(--gold);">Eclipsera Hotel</h1>
+      <p class="text-white mb-0">
+        Eclipsera Hotel ก่อตั้งขึ้นเมื่อหลายร้อยปีก่อน โดยกลุ่มมนุษย์อัญมณีมหาอำนาจผู้ทรงอิทธิพล
+        โรงแรมแห่งนี้ไม่ใช่เพียงที่พัก แต่เป็นศูนย์กลางการปกครองและการจัดระเบียบชนชั้นอัญมณีอย่างเข้มงวด
+        ทุกแผนก ทุกชั้น ทุกบริการ ถูกออกแบบให้สะท้อนความสมบูรณ์แบบและความงดงามของอัญมณี
+      </p>
+    </section>
+
+    <!-- FOUNDERS: THE SEVEN -->
+    <section class="mb-5">
+      <h2 class="fw-bold mb-4" style="color: var(--accent);">The Seven ผู้ก่อตั้งและผู้ปกครองสูงสุด</h2>
+
+      <br><br><br>
+
+      <div class="row g-4 justify-content-center">
+        <!-- Lust — ฝ่ายจัดเลี้ยงและความบันเทิง -->
+        <div class="col-md-4 col-sm-6 mb-4">
+          <div class="category-card p-3 text-center">
+            <div class="img-square mb-3">
+              <img src="./image/ตัวอย่างรูปตึงๆ.jpg" alt="Founder 1">
+            </div>
+            <h5 class="card-title mb-1">ลูกไก่ป๊อบ — Lust</h5>
+            <p class="text-white mb-0">
+              ผู้จัดเลี้ยงและสร้างความบันเทิงสูงสุดของโรงแรม ดูแลการสังสรรค์ งานเลี้ยง
+              และพิธีลึกลับที่ทำให้แขกหลงใหล
+            </p>
+          </div>
+        </div>
+
+        <!-- Gluttony — ฝ่ายครัวและจัดเลี้ยงอาหาร -->
+        <div class="col-md-4 col-sm-6 mb-4">
+          <div class="category-card p-3 text-center">
+            <div class="img-square mb-3">
+              <img src="./image/ตัวอย่างรูปตึงๆ.jpg" alt="Founder 2">
+            </div>
+            <h5 class="card-title mb-1">ลูกคุณพิส — Gluttony</h5>
+            <p class="text-white mb-0">
+              ผู้ควบคุมความอุดมสมบูรณ์ด้านอาหารและงานเลี้ยงทุกชนิด กำกับครัวและเตรียม “เครื่องเซ่นบาป”
+              ให้ทุกมื้อสมบูรณ์
+            </p>
+          </div>
+        </div>
+
+        <!-- Wrath — ฝ่ายรักษาความปลอดภัย -->
+        <div class="col-md-4 col-sm-6 mb-4">
+          <div class="category-card p-3 text-center">
+            <div class="img-square mb-3">
+              <img src="./image/ตัวอย่างรูปตึงๆ.jpg" alt="Founder 3">
+            </div>
+            <h5 class="card-title mb-1">ลูกคุณอัน — Wrath</h5>
+            <p class="text-white mb-0">
+              ผู้บัญชาการความโกรธและการลงโทษ ปราบปรามผู้ทรยศและควบคุมความรุนแรงในโรงแรมอย่างเด็ดขาด
+            </p>
+          </div>
+        </div>
+
+        <!-- Envy — ฝ่ายข่าวกรองและสายสืบ -->
+        <div class="col-md-4 col-sm-6 mb-4">
+          <div class="category-card p-3 text-center">
+            <div class="img-square mb-3">
+              <img src="./image/ตัวอย่างรูปตึงๆ.jpg" alt="Founder 4">
+            </div>
+            <h5 class="card-title mb-1">ลูกไออุ่น — Envy</h5>
+            <p class="text-white mb-0">
+              ผู้ควบคุมข่าวกรองและสายสืบ จัดการเรื่องอิทธิพลและความปรารถนาในสังคมอัญมณีอย่างมืดมน
+            </p>
+          </div>
+        </div>
+
+        <!-- Pride — ฝ่ายบริหารสูงสุด -->
+        <div class="col-md-4 col-sm-6 mb-4">
+          <div class="category-card p-3 text-center">
+            <div class="img-square mb-3">
+              <img src="./image/ตัวอย่างรูปตึงๆ.jpg" alt="Founder 5">
+            </div>
+            <h5 class="card-title mb-1">ลูกไอ้ไบ้ — Pride</h5>
+            <p class="text-white mb-0">
+              ผู้ถืออำนาจสูงสุดด้านความภาคภูมิและความสง่างาม กำหนดมาตรฐานและพิธีการทุกขั้นของโรงแรม
+            </p>
+          </div>
+        </div>
+
+        <!-- Greed — ฝ่ายคลังสมบัติและประมูล -->
+        <div class="col-md-4 col-sm-6 mb-4">
+          <div class="category-card p-3 text-center">
+            <div class="img-square mb-3">
+              <img src="./image/ตัวอย่างรูปตึงๆ.jpg" alt="Founder 6">
+            </div>
+            <h5 class="card-title mb-1">ลูกโจโจ้ — Greed</h5>
+            <p class="text-white mb-0">
+              ผู้ควบคุมความโลภและการสะสมสมบัติ กำหนดวิธีการแลกเปลี่ยนและความมั่งคั่งของโรงแรม
+            </p>
+          </div>
+        </div>
+
+        <!-- Sloth — ฝ่ายห้องพักและความสงบ -->
+        <div class="col-md-4 col-sm-6 mb-4">
+          <div class="category-card p-3 text-center">
+            <div class="img-square mb-3">
+              <img src="./image/ตัวอย่างรูปตึงๆ.jpg" alt="Founder 7">
+            </div>
+            <h5 class="card-title mb-1">ลูกจิ๊กโก๋ — Sloth</h5>
+            <p class="text-white mb-0">
+              ผู้ควบคุมความสงบและการพักผ่อน ดูแลห้องพักและพื้นที่นิ่งสงบ เพื่อให้ทุกชีวิตสมดุล
+            </p>
+          </div>
+        </div>
+
+
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <footer class="text-center">
+    <div class="container">
+      <p class="mb-1">© 2025 Eclipsera Hotel — Designed with ❤️</p>
+      <small class="text-white">Replace placeholder images with your own (folder: /image) for production.</small>
+    </div>
+  </footer>
+
+  <audio id="bg-music" autoplay loop>
+    <source src="./mp3/Dark Waltz Music - Vampire Masquerade collection.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const audio = document.getElementById('bg-music');
+
+      // รอให้ผู้ใช้คลิกก่อนถึงจะเล่น
+      const playMusic = () => {
+        audio.play().catch(() => { });
+        document.removeEventListener('click', playMusic);
+      };
+
+      document.addEventListener('click', playMusic);
+    });
+
+    const audio = document.getElementById('bg-music');
+    const btn = document.getElementById('music-toggle');
+    let playing = false;
+
+    btn.addEventListener('click', () => {
+      if (!playing) {
+        audio.play();
+        btn.textContent = '🔊 Playing';
+      } else {
+        audio.pause();
+        btn.textContent = '🔈 Music';
+      }
+      playing = !playing;
+    });
+  </script>
+</body>
+
+</html>

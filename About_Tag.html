@@ -1,0 +1,324 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Hotel — Home</title>
+
+  <!-- Google font -->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    :root {
+      --accent: #b98bff;
+      --accent-dark: #6b3bbd;
+      --gold: #d9b65a;
+      --muted: #b3b3c6;
+      --bg: #0b0a13;
+      --card-bg: rgba(21, 18, 31, 0.9);
+      --text: #e5e3f5;
+    }
+
+    body {
+      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+      background: radial-gradient(circle at top, #1c1529 0%, #0b0a13 100%);
+      color: var(--text);
+      scroll-behavior: smooth;
+      overflow-x: hidden;
+    }
+
+    @keyframes sparkle {
+      0% {
+        background-position: 0 0;
+      }
+
+      100% {
+        background-position: 1000px 1000px;
+      }
+    }
+
+    /* NAVBAR */
+    .navbar {
+      background: rgba(10, 8, 20, 0.95);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(185, 139, 255, 0.25);
+      padding: 0.75rem 1rem;
+      z-index: 10;
+      position: sticky;
+      top: 0;
+    }
+
+    .navbar-brand {
+      font-weight: 700;
+      letter-spacing: -0.4px;
+      color: var(--gold) !important;
+      text-shadow: 0 0 6px rgba(217, 182, 90, 0.4);
+    }
+
+    .nav-link {
+      color: var(--muted) !important;
+      transition: color .3s;
+      font-weight: 500;
+    }
+
+    .nav-link:hover {
+      color: var(--accent) !important;
+    }
+
+    .btn-outline-primary {
+      border-color: var(--accent);
+      color: var(--accent);
+      font-size: 0.9rem;
+      padding: 0.25rem 0.75rem;
+      transition: all 0.3s;
+    }
+
+    .btn-outline-primary:hover {
+      background: var(--accent);
+      color: #fff;
+      transform: scale(1.05);
+      box-shadow: 0 0 12px var(--accent);
+    }
+
+    /* CARDS */
+    .cards-grid {
+      margin-top: 50px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 25px;
+      z-index: 5;
+      position: relative;
+    }
+
+    .category-card {
+      background: var(--card-bg);
+      border-radius: 16px;
+      padding: 35px;
+      max-width: 650px;
+      box-shadow: 0 0 35px rgba(185, 139, 255, 0.2);
+      border: 1px solid rgba(185, 139, 255, 0.25);
+      backdrop-filter: blur(6px);
+      transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .category-card::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle at 50% 50%, rgba(185, 139, 255, 0.15), transparent 50%);
+      animation: float 10s linear infinite;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    @keyframes float {
+      0% {
+        transform: rotate(0deg);
+      }
+
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    .category-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 0 50px rgba(185, 139, 255, 0.35);
+      border-color: var(--accent);
+    }
+
+    .category-card>* {
+      position: relative;
+      z-index: 1;
+    }
+
+    .card-title {
+      color: var(--gold);
+      font-weight: 800;
+      font-size: 2rem;
+      margin-bottom: 20px;
+      text-shadow: 0 0 10px rgba(217, 182, 90, 0.5);
+      text-align: center; /* จัดตรงกลาง */
+    }
+
+    h5.fw-bold {
+      color: var(--accent);
+      font-size: 1.3rem;
+      margin-top: 25px;
+      margin-bottom: 15px;
+      text-shadow: 0 0 6px rgba(185, 139, 255, 0.4);
+    }
+
+    .text-muted {
+      color: var(--muted) !important;
+      font-size: 1rem;
+      line-height: 1.7;
+    }
+
+    ul.text-muted li {
+      margin-bottom: 8px;
+    }
+
+    /* AUDIO BUTTON */
+    #music-toggle {
+      border-radius: 8px;
+      padding: 0.35rem 0.9rem;
+      font-size: 0.95rem;
+      box-shadow: 0 0 8px rgba(185, 139, 255, 0.4);
+      transition: transform 0.2s, box-shadow 0.3s;
+    }
+
+    #music-toggle:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 15px rgba(185, 139, 255, 0.6);
+    }
+
+    footer {
+      margin-top: 60px;
+      padding: 40px 0;
+      background: #0a0912;
+      color: var(--muted);
+      border-top: 1px solid rgba(185, 139, 255, 0.15);
+      font-size: 0.9rem;
+      text-align: center;
+    }
+
+    footer p {
+      color: var(--accent);
+      margin-bottom: 5px;
+    }
+
+    @media (max-width: 768px) {
+      .cards-grid {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .category-card {
+        max-width: 90%;
+        padding: 25px;
+      }
+
+      .card-title {
+        font-size: 1.6rem;
+      }
+
+      h5.fw-bold {
+        font-size: 1.15rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container">
+      <a class="navbar-brand" href="#">Eclipsera Hotel</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu"
+        aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto align-items-lg-center">
+          <li class="nav-item me-2"><a class="nav-link" href="./Home.html">Home</a></li>
+          <li class="nav-item me-2"><a class="nav-link" href="./Role.html">Role</a></li>
+          <li class="nav-item me-2"><a class="nav-link" href="./About_Hotel.html">About Hotel</a></li>
+          <li class="nav-item me-2"><a class="nav-link" href="./About_Tag.html">About Tag</a></li>
+          <li class="nav-item me-2"><button id="music-toggle" class="btn btn-outline-primary btn-sm">🔈 Music</button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container cards-grid">
+    <div class="category-card">
+      <h3 class="card-title">About Tag</h3>
+      <p class="text-muted"><strong>TAG:</strong> #Lustra_Eternum_Hotel | #LE_HT</p>
+      <p class="text-muted"><strong>Location:</strong> Europe </p>
+      <p class="text-muted"><strong>Setting:</strong> ปัจจุบัน </p>
+      <p class="text-muted"><strong>Platform:</strong> Facebook | Discord | Instagram </p>
+      <p class="text-muted"><strong>Theme:</strong> บาป 7 ประการ | โรงแรม | มนุษย์อัญมณี | ขุนนาง | แบ่งชนชั้น |
+        ดาร์คแฟนตาซี </p>
+      <p class="text-muted"><strong>Rate:</strong> แดงถึงดำ</p>
+
+      <h5 class="fw-bold">Background Story</h5>
+      <p class="text-muted">เมื่อโลกถูกแบ่งออกเป็นสองเผ่าพันธุ์ ได้แก่ มนุษย์อัญมณี ผู้เกิดมาจากอัญมณีที่บริสุทธิ์ และ
+        มนุษย์ธรรมดา ผู้มีเพียงเลือดเนื้อและความสิ้นหวัง
+      </p>
+
+      <p class="text-muted">
+
+        มนุษย์อัญมณีคือชนชั้นสูงสุดของโลกใบนี้ ร่างของพวกเขาเปล่งประกาย ราวของขวัญจากเทพเจ้า ในสายตาของพวกเขา
+        มนุษย์ธรรมดาเป็นเพียงเศษดินต่ำต้อยที่มีไว้รับใช้และถูกแลกเปลี่ยน
+        ชีวิตมนุษย์หนึ่งคนไม่มีค่าเท่าผงผลึกที่ร่วงจากร่างของอัญมณีชั้นสูงแม้แต่น้อย
+      </p>
+
+      <p class="text-muted">
+
+        แต่ถึงจะอยู่เหนือมนุษย์แต่ภายในหมู่มนุษย์อัญมณี ก็มีการแบ่งชนชั้นอย่างละเอียดอ่อนตามคุณภาพของผลึก
+        และความเจิดจรัส
+      </p>
+
+      <p class="text-muted">
+
+        ผู้ที่มีผลึกบริสุทธิ์ ไร้รอยด่าง ถูกเรียกว่า The Perfected
+        ถือเป็นผู้ทรงศักดิ์ที่สุดในหมู่ชนชั้นและได้รับสิทธิ์เป็นผู้สืบทอดเพื่อเป็น The seven ในการปกครองโรงแรม Eclipsera
+        สถานที่ที่รวบรวมอัญมณีผู้ทรงบาป และพิธีประมูลชีวิตมนุษย์ไว้ทั้งหมด
+
+        </p>
+        
+        <p class="text-muted">
+        แต่หากผลึกของใครมีรอยร้าว แม้เพียงเส้นเดียว สถานะของพวกเขาจะร่วงหล่นในทันที จากผู้สูงศักดิ์กลายเป็นผู้รับใช้
+        หรือถูกส่งลงชั้นล่างของโรงแรมให้ใช้แรงงาน เพราะรอยร้าวนั้นคือสัญญาณแห่งความเสื่อมทราม
+        และไม่มีสิ่งใดน่ารังเกียจในหมู่มนุษย์อัญมณีเท่าความบกพร่อง
+
+        </p>
+
+        <p class="text-muted">
+        
+        วิธีเดียวที่จะกลับคืนสู่จุดสูงสุดได้ คือการหลอมรวมตนเองกับผู้อื่น การกลืนกินผลึกของอัญมณีอีกตนเพื่อสมานรอยร้าว
+        หรือไม่ก็บังคับแย่งเศษเสี้ยวของผู้อื่นมาเป็นของตน…</p>
+
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2025 Eclipsera Hotel — Designed with ❤️</p>
+    <small class="text-white">Replace placeholder images with your own (folder: /image) for production.</small>
+  </footer>
+
+  <audio id="bg-music" autoplay loop>
+    <source src="./mp3/Dark Waltz Music - Vampire Masquerade collection.mp3" type="audio/mpeg">
+  </audio>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    const audio = document.getElementById('bg-music');
+    const btn = document.getElementById('music-toggle');
+    let playing = false;
+    btn.addEventListener('click', () => {
+      if (!playing) {
+        audio.play();
+        btn.textContent = '🔊 Playing';
+      } else {
+        audio.pause();
+        btn.textContent = '🔈 Music';
+      }
+      playing = !playing;
+    });
+  </script>
+</body>
+
+</html>

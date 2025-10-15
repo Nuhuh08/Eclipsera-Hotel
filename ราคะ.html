@@ -1,0 +1,363 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Hotel — Lust Section</title>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        :root {
+            --accent: #b98bff;
+            --accent-dark: #6b3bbd;
+            --gold: #d9b65a;
+            --bg: #0b0a13;
+            --card-bg: #1b101b;
+            --text: #ffffff;
+            /* เปลี่ยนตัวอักษรสีเทาเป็นขาว */
+        }
+
+        body {
+            font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+            background: radial-gradient(circle at top, #2c152c 0%, #0b0a13 90%);
+            color: var(--text);
+            scroll-behavior: smooth;
+        }
+
+        /* NAVBAR */
+        .navbar {
+            background: rgba(10, 8, 20, 0.8);
+            backdrop-filter: blur(8px);
+            border-bottom: 1px solid rgba(185, 139, 255, 0.25);
+        }
+
+        .navbar-brand {
+            font-weight: 700;
+            color: var(--gold) !important;
+            text-shadow: 0 0 6px rgba(217, 182, 90, 0.4);
+        }
+
+        .nav-link {
+            color: var(--text) !important;
+            transition: color .3s;
+        }
+
+        .nav-link:hover {
+            color: var(--accent) !important;
+        }
+
+        .btn-outline-primary {
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+
+        .btn-outline-primary:hover {
+            background: var(--accent);
+            color: #fff;
+        }
+
+        /* SECTION TITLES */
+        h2.section-title {
+            color: var(--accent);
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            text-align: center;
+            text-shadow: 0 0 12px rgba(185, 139, 255, 0.5);
+        }
+
+        h3.sub-title {
+            color: var(--gold);
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 12px;
+            border-bottom: 1px solid rgba(185, 139, 255, 0.3);
+            padding-bottom: 5px;
+        }
+
+        p {
+            color: var(--text);
+            font-size: 0.95rem;
+        }
+
+        /* CARDS */
+        .card {
+            background: var(--card-bg);
+            border: 1px solid rgba(185, 139, 255, 0.2);
+            border-radius: 14px;
+            overflow: hidden;
+            transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.3s;
+            margin-bottom: 30px;
+        }
+
+        .card:hover {
+            transform: translateY(-6px);
+            border-color: var(--accent);
+            box-shadow: 0 0 30px rgba(185, 139, 255, 0.4);
+        }
+
+        .card-img-top {
+            border-radius: 14px 14px 0 0;
+            object-fit: cover;
+            height: 220px;
+        }
+
+        .card-body h5 {
+            color: var(--accent);
+            font-weight: 600;
+            margin-bottom: 10px;
+            text-shadow: 0 0 4px rgba(185, 139, 255, 0.5);
+        }
+
+        .card-body p {
+            margin-bottom: 0;
+        }
+
+        /* GRID */
+        .row.g-4 {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .col-md-4,
+        .col-sm-6 {
+            display: flex;
+        }
+
+        /* FOOTER */
+        footer {
+            margin-top: 48px;
+            padding: 32px 0;
+            background: #0a0912;
+            color: var(--text);
+            border-top: 1px solid rgba(185, 139, 255, 0.15);
+        }
+
+        footer p {
+            color: var(--accent);
+        }
+
+        footer small {
+            color: var(--text);
+        }
+
+        .card-img-left {
+            width: 300px;
+            height: auto;
+            object-fit: cover;
+            border-radius: 14px 0 0 14px;
+        }
+
+        @media (max-width: 767px) {
+            .card.d-flex.flex-row {
+                flex-direction: column;
+            }
+
+            .card-img-left {
+                width: 100%;
+                border-radius: 14px 14px 0 0;
+            }
+        }
+
+        .section-header img {
+            padding: 8px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-dark mb-5">
+        <div class="container">
+            <a class="navbar-brand" href="#">Eclipsera Hotel</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navMenu">
+                <ul class="navbar-nav ms-auto align-items-lg-center">
+                    <li class="nav-item me-2"><a class="nav-link" href="./Home.html">Home</a></li>
+                    <li class="nav-item me-2"><a class="nav-link" href="./Role.html">Role</a></li>
+                    <li class="nav-item me-2"><a class="nav-link" href="./About_Hotel.html">About Hotel</a></li>
+                    <li class="nav-item me-2"><a class="nav-link" href="./About_Tag.html">About Tag</a></li>
+                    <li class="nav-item me-2"><button id="music-toggle" class="btn btn-outline-primary btn-sm">🔈
+                            Music</button></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- LUST SECTION -->
+    <main class="container">
+
+        <div class="section-header text-center mb-4">
+            <!-- รูปตรา / Emblem -->
+            <img src="./image/ตราราคะ.png" alt="Emblem" style="width:300px; height:auto; margin-bottom:15px;">
+
+            <!-- ชื่อ Section -->
+            <h2 class="section-title">Lust Chamber</h2>
+        </div>
+
+        <p class="text-center mb-5">
+            แผนกต้อนรับและความบันเทิงของโรงแรมจัดงานสังสรรค์หรูหรา พิธีลึกลับ และสร้างความยินดีให้แขก
+            ทุกคนใช้เสน่ห์และความงามเป็นอาวุธ
+            มีทั้งความประณีตและเจ้าเล่ห์ ชักนำแขกให้ตกอยู่ในเงื้อมมือของบาปอย่างแนบเนียน
+        </p>
+
+        <!-- LEADERSHIP -->
+        <div class="mb-5">
+            <h3 class="sub-title">Leader</h3>
+            <div class="row g-4 justify-content-center">
+                <!-- Velvet Master Horizontal Card -->
+                <div class="col-12">
+                    <div class="card h-100 d-flex flex-row">
+                        <img src="./image/ตัวอย่างรูปตึงๆ.jpg" class="card-img-left" alt="Velvet Master"
+                            style="width: 400px; object-fit: cover; border-radius: 14px 0 0 14px;">
+                        <div class="card-body d-flex flex-column">
+                            <h5>Velvet Master</h5>
+                            <p>ผู้บริหารสูงสุดของฝ่ายราคะ มีอำนาจคุมทั้งงานสังสรรค์และพิธีลึกลับ
+                                มักปรากฏตัวด้วยความสง่างามและเย้ายวนทุกสายตา
+                                สามารถตัดสินใจทุกเรื่องภายในแผนกอย่างเด็ดขาดและมั่นคง
+                                นอกจากนี้ยังมีหน้าที่นำเหล่ามนุษย์อัญมณีในงานสังคม
+                                และมีบทบาททั้งสร้างบรรยากาศและชักนำแขก
+                                ให้สนุกสนานและติดใจจนยากจะลืม</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- ENTERTAINERS -->
+        <div class="mb-5">
+            <h3 class="sub-title">Entertainers & Staff</h3>
+            <div class="row g-4 justify-content-center">
+                <!-- Gem Courtesans -->
+                <div class="col-md-4 col-sm-6">
+                    <div class="card h-100">
+                        <img src="./image/ตัวอย่างรูปตึงๆ.jpg" class="card-img-top" alt="Gem Courtesans">
+                        <div class="card-body d-flex flex-column">
+                            <h5>Gem Courtesans</h5>
+                            <p>มนุษย์อัญมณีที่ใช้ความงามแลกพลัง ทำหน้าที่ทั้งบันเทิงและกลยุทธ์ทางสังคม
+                                พวกเขามีบทบาทสำคัญในการสร้างบรรยากาศหรูหราและชักนำแขกให้เข้าถึงประสบการณ์ของฝ่ายราคะ</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Rosetail Servants -->
+                <div class="col-md-4 col-sm-6">
+                    <div class="card h-100">
+                        <img src="./image/ตัวอย่างรูปตึงๆ.jpg" class="card-img-top" alt="Rosetail Servants">
+                        <div class="card-body d-flex flex-column">
+                            <h5>Rosetail Servants</h5>
+                            <p>ผู้รับใช้ระดับล่าง ถูกฝึกให้กลายเป็นเครื่องประดับมีชีวิต เพิ่มเสน่ห์และบรรยากาศให้ห้อง
+                                ทำหน้าที่สนับสนุนงานสังสรรค์ พิธีลึกลับ และกิจกรรมทุกอย่างของฝ่ายราคะ</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Additional Staff Example -->
+                <div class="col-md-4 col-sm-6">
+                    <div class="card h-100">
+                        <img src="./image/ตัวอย่างรูปตึงๆ.jpg" class="card-img-top" alt="Lust Assistant">
+                        <div class="card-body d-flex flex-column">
+                            <h5>Lust Assistants</h5>
+                            <p>ผู้ช่วยระดับกลาง มีหน้าที่จัดเตรียมงานและดูแลรายละเอียดเล็กน้อยในงานสังสรรค์
+                                พวกเขาช่วยให้ฝ่ายราคะดำเนินไปอย่างราบรื่นและหรูหรา
+                                พร้อมทั้งประสานงานระหว่าง Leadership และ Entertainers</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- LUST ROOMS -->
+        <div class="mb-5">
+            <h3 class="sub-title">Lust Suites</h3>
+            <div class="row g-4 justify-content-center">
+
+                <!-- Velvet Embrace -->
+                <div class="col-md-4 col-sm-6">
+                    <div class="card h-100">
+                        <img src="./image/room.gif" class="card-img-top" alt="Velvet Embrace">
+                        <div class="card-body d-flex flex-column">
+                            <h5>Velvet Embrace</h5>
+                            <p>
+                                ห้องพักที่โอบล้อมด้วยผ้าม่านกำมะหยี่สีม่วงเข้ม
+                                เตียงกว้างนุ่มลึก พร้อมแสงไฟสลัวเย้ายวน
+                                ทุกองค์ประกอบชวนให้หลงใหลและปลดปล่อยความปรารถนา
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Crimson Desire -->
+                <div class="col-md-4 col-sm-6">
+                    <div class="card h-100">
+                        <img src="./image/room2.gif" class="card-img-top" alt="Crimson Desire">
+                        <div class="card-body d-flex flex-column">
+                            <h5>Crimson Desire</h5>
+                            <p>
+                                ห้องพักที่ตกแต่งด้วยสีแดงเบอร์กันดีและทอง
+                                มุมส่วนตัวพร้อมเก้าอี้และโคมไฟโรแมนติก
+                                แขกที่เข้าพักจะรู้สึกถึงเสน่ห์และความเย้ายวนรอบตัว
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Midnight Temptation -->
+                <div class="col-md-4 col-sm-6">
+                    <div class="card h-100">
+                        <img src="./image/room3.gif" class="card-img-top" alt="Midnight Temptation">
+                        <div class="card-body d-flex flex-column">
+                            <h5>Midnight Temptation</h5>
+                            <p>
+                                ห้องพักที่เต็มไปด้วยแสงสลัวสีม่วงและทอง
+                                ผสมผสานความหรูหรากับความลึกลับ
+                                แขกจะได้สัมผัสความปรารถนาและความเย้ายวนอย่างเต็มที่
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+    </main>
+    <footer class="text-center">
+        <div class="container">
+            <p class="mb-1">© 2025 Eclipsera Hotel — Designed with ❤️</p>
+            <small>Replace placeholder images with your own (folder: /image) for production.</small>
+        </div>
+    </footer>
+    <audio id="bg-music" autoplay loop>
+        <source src="./mp3/ราคะ.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const audio = document.getElementById('bg-music');
+        const btn = document.getElementById('music-toggle');
+        let playing = false;
+
+        btn.addEventListener('click', () => {
+            if (!playing) {
+                audio.play();
+                btn.textContent = '🔊 Playing';
+            } else {
+                audio.pause();
+                btn.textContent = '🔈 Music';
+            }
+            playing = !playing;
+        });
+    </script>
+</body>
+
+</html>

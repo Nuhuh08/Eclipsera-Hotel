@@ -1,0 +1,337 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Hotel — Lust Section</title>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        :root {
+            --accent: #b98bff;
+            --accent-dark: #6b3bbd;
+            --gold: #d9b65a;
+            --bg: #0b0a13;
+            --card-bg: #1b101b;
+            --text: #ffffff;
+            /* เปลี่ยนตัวอักษรสีเทาเป็นขาว */
+        }
+
+        body {
+            font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+            background: radial-gradient(circle at top, #2c152c 0%, #0b0a13 90%);
+            color: var(--text);
+            scroll-behavior: smooth;
+        }
+
+        /* NAVBAR */
+        .navbar {
+            background: rgba(10, 8, 20, 0.8);
+            backdrop-filter: blur(8px);
+            border-bottom: 1px solid rgba(185, 139, 255, 0.25);
+        }
+
+        .navbar-brand {
+            font-weight: 700;
+            color: var(--gold) !important;
+            text-shadow: 0 0 6px rgba(217, 182, 90, 0.4);
+        }
+
+        .nav-link {
+            color: var(--text) !important;
+            transition: color .3s;
+        }
+
+        .nav-link:hover {
+            color: var(--accent) !important;
+        }
+
+        .btn-outline-primary {
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+
+        .btn-outline-primary:hover {
+            background: var(--accent);
+            color: #fff;
+        }
+
+        /* SECTION TITLES */
+        h2.section-title {
+            color: var(--accent);
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            text-align: center;
+            text-shadow: 0 0 12px rgba(185, 139, 255, 0.5);
+        }
+
+        h3.sub-title {
+            color: var(--gold);
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 12px;
+            border-bottom: 1px solid rgba(185, 139, 255, 0.3);
+            padding-bottom: 5px;
+        }
+
+        p {
+            color: var(--text);
+            font-size: 0.95rem;
+        }
+
+        /* CARDS */
+        .card {
+            background: var(--card-bg);
+            border: 1px solid rgba(185, 139, 255, 0.2);
+            border-radius: 14px;
+            overflow: hidden;
+            transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.3s;
+            margin-bottom: 30px;
+        }
+
+        .card:hover {
+            transform: translateY(-6px);
+            border-color: var(--accent);
+            box-shadow: 0 0 30px rgba(185, 139, 255, 0.4);
+        }
+
+        .card-img-top {
+            border-radius: 14px 14px 0 0;
+            object-fit: cover;
+            height: 220px;
+        }
+
+        .card-body h5 {
+            color: var(--accent);
+            font-weight: 600;
+            margin-bottom: 10px;
+            text-shadow: 0 0 4px rgba(185, 139, 255, 0.5);
+        }
+
+        .card-body p {
+            margin-bottom: 0;
+        }
+
+        /* GRID */
+        .row.g-4 {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .col-md-4,
+        .col-sm-6 {
+            display: flex;
+        }
+
+        /* FOOTER */
+        footer {
+            margin-top: 48px;
+            padding: 32px 0;
+            background: #0a0912;
+            color: var(--text);
+            border-top: 1px solid rgba(185, 139, 255, 0.15);
+        }
+
+        footer p {
+            color: var(--accent);
+        }
+
+        footer small {
+            color: var(--text);
+        }
+
+        .card-img-left {
+            width: 300px;
+            height: auto;
+            object-fit: cover;
+            border-radius: 14px 0 0 14px;
+        }
+
+        @media (max-width: 767px) {
+            .card.d-flex.flex-row {
+                flex-direction: column;
+            }
+
+            .card-img-left {
+                width: 100%;
+                border-radius: 14px 14px 0 0;
+            }
+        }
+
+        .section-header img {
+            padding: 8px;
+        }
+
+        .card,
+        .card p,
+        .card ul,
+        .card li {
+            color: #ffffff !important;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-dark mb-5">
+        <div class="container">
+            <a class="navbar-brand" href="#">Eclipsera Hotel</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navMenu">
+                <ul class="navbar-nav ms-auto align-items-lg-center">
+                    <li class="nav-item me-2"><a class="nav-link" href="./Home.html">Home</a></li>
+                    <li class="nav-item me-2"><a class="nav-link" href="./Role.html">Role</a></li>
+                    <li class="nav-item me-2"><a class="nav-link" href="./About_Hotel.html">About Hotel</a></li>
+                    <li class="nav-item me-2"><a class="nav-link" href="./About_Tag.html">About Tag</a></li>
+                    <li class="nav-item me-2"><button id="music-toggle" class="btn btn-outline-primary btn-sm">🔈
+                            Music</button></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="container my-5">
+        <div class="text-center mb-4">
+            <div class="section-header">
+                <img src="./image/ตราโรงแรม.png" alt="Eclipsera Logo" width="300px">
+            </div>
+            <h2 class="section-title">กฎการสร้างตัวละคร</h2>
+            <p>คำแนะนำและข้อกำหนดสำหรับผู้สร้างตัวละคร เพื่อให้ทุกตัวละครมีความสมดุลและเข้ากับโลกของเรา</p>
+        </div>
+
+        <div class="row g-4 justify-content-center">
+
+            <!-- Height -->
+            <div class="col-md-6">
+                <div class="card p-3 h-100">
+                    <h3 class="sub-title">📏 ความสูง</h3>
+                    <p>ตัวละครสามารถสูงได้ไม่เกิน <strong>3 เมตร</strong> เพื่อให้สมดุลในการวาดภาพและโรลเพลย์
+                        โดยมีข้อแนะนำเพิ่มเติมดังนี้:</p>
+                    <ul>
+                        <li>มนุษย์ปกติ: 1.5–2 เมตร</li>
+                        <li>สัตว์ประหลาดหรือสิ่งมีชีวิตพิเศษ เช่น มนุษย์อัญมณี: ไม่เกิน 3 เมตร</li>
+                        <li>หากสูงเกินขอบเขตอาจถูกปรับบทบาทหรือจำกัดการเข้าร่วมกิจกรรม</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Powers -->
+            <div class="col-md-6">
+                <div class="card p-3 h-100">
+                    <h3 class="sub-title">💥 พลังและความสามารถ</h3>
+                    <p>ตัวละครสามารถมีพลังพิเศษได้ แต่ต้องไม่เกินไปจนโกงหรือทำลายสมดุลของโลก</p>
+                    <ul>
+                        <li>พลังต้องมีข้อจำกัด เช่น จำนวนครั้งใช้งานต่อวัน, ระยะเวลา หรือความเหนื่อยล้า</li>
+                        <li>ไม่สามารถทำลายตัวละครอื่นหรือโลกได้เพียงคนเดียว</li>
+                        <li>ควรอธิบายวิธีการทำงานของพลังอย่างละเอียดและมีเหตุผล</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Appearance & Clothing -->
+            <div class="col-md-6">
+                <div class="card p-3 h-100">
+                    <h3 class="sub-title">👗 การแต่งกาย</h3>
+                    <p>การแต่งตัวต้องเข้ากับ <strong>ธีม</strong>, <strong>สถานะ</strong> และ <strong>บทบาท</strong>
+                        ของตัวละคร:</p>
+                    <ul>
+                        <li>สามารถออกแบบชุดเองได้ แต่ต้องไม่ละเมิดกฎและความเหมาะสม</li>
+                        <li>อาวุธหรือเครื่องประดับต้องสอดคล้องกับบทบาทและพลังของตัวละคร</li>
+                        <li>กรณีมนุษย์อัญมณี คอสตูมสามารถสะท้อนสีหรือคุณสมบัติของอัญมณีได้</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Hair & Eye -->
+            <div class="col-md-6">
+                <div class="card p-3 h-100">
+                    <h3 class="sub-title">🌈 สีผมและสีตา</h3>
+                    <p>การกำหนดสีผมและตาของตัวละคร:</p>
+                    <ul>
+                        <li>มนุษย์ธรรมดา: ใช้สีธรรมชาติ</li>
+                        <li>มนุษย์อัญมณี: สามารถใช้สีที่สอดคล้องกับอัญมณี เช่น ไพลิน = น้ำเงิน, เพชร = ขาวใส</li>
+                        <li>สีต้องไม่รบกวนสมดุลการออกแบบตัวละคร</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Personality & Role -->
+            <div class="col-md-6">
+                <div class="card p-3 h-100">
+                    <h3 class="sub-title">🖊️ บุคลิกและบทบาท</h3>
+                    <p>ตัวละครควรมีบุคลิกและบทบาทที่สอดคล้องกัน:</p>
+                    <ul>
+                        <li>กำหนดลักษณะนิสัย, จุดแข็ง, จุดอ่อนให้ชัดเจน</li>
+                        <li>บทบาทต้องสอดคล้องกับโลกและกิจกรรม</li>
+                        <li>หากตัวละครไม่สอดคล้อง อาจถูกปรับบทบาทหรือจำกัดสิทธิ์</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Age & Background -->
+            <div class="col-md-6">
+                <div class="card p-3 h-100">
+                    <h3 class="sub-title">📜 อายุและภูมิหลัง</h3>
+                    <ul>
+                        <li>กำหนดอายุและประวัติให้สมเหตุสมผลกับบทบาท</li>
+                        <li>ภูมิหลังควรมีความสมดุลและเชื่อมโยงกับโลกของ Eclipsera</li>
+                        <li>หลีกเลี่ยงการสร้างตัวละครที่เป็น “เทพ” หรือ “โกงทุกด้าน”</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Restrictions & Warnings -->
+            <div class="col-md-6">
+                <div class="card p-3 h-100">
+                    <h3 class="sub-title">⚠️ ข้อจำกัดและคำเตือน</h3>
+                    <ul>
+                        <li>ห้ามใช้หลายบัญชีเพื่อโกง</li>
+                        <li>ไม่อนุญาตตัวละครที่ทำลายสมดุลการเล่นหรือรบกวนผู้เล่นอื่น</li>
+                        <li>ผู้ดูแลมีสิทธิ์ปรับแก้หรือลบตัวละครที่ไม่เป็นไปตามกฎ</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+
+    <footer class="text-center">
+        <div class="container">
+            <p class="mb-1">© 2025 Eclipsera Hotel — Designed with ❤️</p>
+            <small>Replace placeholder images with your own (folder: /image) for production.</small>
+        </div>
+    </footer>
+    <audio id="bg-music" autoplay loop>
+        <source src="./mp3/Dark Waltz Music - Vampire Masquerade collection.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const audio = document.getElementById('bg-music');
+        const btn = document.getElementById('music-toggle');
+        let playing = false;
+
+        btn.addEventListener('click', () => {
+            if (!playing) {
+                audio.play();
+                btn.textContent = '🔊 Playing';
+            } else {
+                audio.pause();
+                btn.textContent = '🔈 Music';
+            }
+            playing = !playing;
+        });
+    </script>
+</body>
+
+</html>
